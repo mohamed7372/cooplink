@@ -1,0 +1,149 @@
+{
+  "general": [
+      {
+        "id": 1,
+        "question": "What is the industry you what to start ",
+        "options": [
+          "E-commerce",
+          "wood-working",
+          "Metal working",
+          "wod working and E-commerce"
+        ]
+        
+      }
+    ],
+  "E-commerce": [
+      {
+          "intro":"in this industry we will provide you with a company that will manage your social medias so you can be more in had with the products and let us find your marketres"
+      },
+      {
+        "id": 1,
+        "question": "service",
+        "options":   ["social medial"]
+      },
+    {
+      "id": 2,
+      "question": "what is your budget",
+      "options": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ]
+      
+    },
+    {
+      "id": 3,
+      "question": "What is the mass you intend to work with?",
+      "options": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ]
+      
+    },
+    {
+      "id": 4,
+      "company":"we found you the folowing companies ",
+      "acuray":"3"
+
+    },
+    {
+      "id": 6,
+      "company":"we found you the folowing companies ",
+      "acuray":"2"
+
+    },
+    {
+      "id": 7,
+      "company":"we found you the folowing companies ",
+      "acuray":"2"
+
+    }
+  ],
+  "E-wood": [
+      {
+          "intro":"in this industry we will provide you with companies that will do the folowing work provide you with the row materials , another to fin workers in your factry, and also marketing agency to help your products see the light  "
+      },
+      {
+          "id": 1,
+          "question": "material provider",
+          "options":   "wood provider"
+            
+          
+          
+        },
+    {
+      "id": 1,
+      "question": "what is your budget",
+      "options": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ]
+      
+    },
+    {
+      "id": 2,
+      "question": "What is the mass you intend to work with?",
+      "options": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ]
+      
+    },
+    {},
+    {
+      "id": 2,
+      "company":"we found you the folowing companies ",
+      "acuray":"3"
+
+    },
+    {
+      "id": 2,
+      "company":"we found you the folowing companies ",
+      "acuray":"2"
+
+    },
+    {
+      "id": 2,
+      "company":"we found you the folowing companies ",
+      "acuray":"2"
+
+    }
+  ],
+  "wood-working": [
+      {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "options": [
+          "Madrid",
+          "Paris",
+          "Berlin",
+          "London"
+        ]
+        
+      },
+      {
+        "id": 2,
+        "question": "What is the largest planet in our solar system?",
+        "options": [
+          "Jupiter",
+          "Saturn",
+          "Neptune",
+          "Uranus"
+        ]
+        
+      },
+      {
+          "budget" : "low",
+          "service": ["1", "4", "8"],
+          "qte": "high"
+      }
+  ]
+}
+

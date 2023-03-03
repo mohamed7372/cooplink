@@ -4,7 +4,7 @@ import Logo from '../assets/logo/logo2.svg'
 
 const NavBar = () => {
     return (
-        <div className='flex justify-between items-center bg-white py-2 responsive shadow-md'>
+        <div className='flex justify-between items-center bg-white py-2 px-16 shadow-md w-full'>
             <div>
                 <Link to='/home'><img src={Logo} alt="" className='w-28'/></Link>
             </div>

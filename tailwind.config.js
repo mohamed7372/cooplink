@@ -35,6 +35,7 @@ module.exports = {
       backgroundImage: {
         '1': 'url("./assets/img/bg-1.svg")',
         '2': 'url("./assets/img/bg-2.svg")',
+        '3': 'url("./assets/img/bg-3.svg")',
       },
       height: {
         large: '36rem',

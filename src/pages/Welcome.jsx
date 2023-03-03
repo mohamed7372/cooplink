@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const Welcome = () => {
-    const [timeWait, setTimeWait ] = useState(5)
-    console.log(timeWait);
     const navigate = useNavigate()
 
     useEffect(() => {

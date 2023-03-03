@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .responsive {
-    @apply container mx-auto px-8
+    @apply container w-full px-8
 }

@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
+import Loading from "./pages/Loading";
 import Login from "./pages/Login";
 import Sign from "./pages/Sign";
 import SignBussiness from "./pages/SignBussiness";
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/create-account-bussiness" element={<SignBussiness/>} />
           <Route exact path="/home" element={<Home/>} />
           <Route exact path="/dashboard" element={<Dashboard/>} />
+          <Route exact path="/loading" element={<Loading/>} />
           {/* <Route path="*" element={<Error/>} /> */}
         </Routes>
       </Router>
