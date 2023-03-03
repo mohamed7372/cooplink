@@ -1,12 +1,12 @@
 import React from 'react'
 import Button from '../components/ui/Button'
 
-const PopUpConfirm = ({ showPopUpConfirm, setShowPopUpConfirm }) => {
+const PopUpConfirm = ({ showPopUpConfirm, setShowPopUpConfirm=()=>{} }) => {
     const closePopUp = (e) => {
         e.preventDefault()
         setShowPopUpConfirm(0)
     }
-    
+
     return (
         <div className='bg-white rounded-lg px-8 py-6 w-1/2'>
             <h3 className='text-1xl font-bold mb-3'>Connect has been sent </h3>

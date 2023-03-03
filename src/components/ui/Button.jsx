@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({title, color, bgcolor, onclick=''}) => {
+const Button = ({title, color, bgcolor, onclick=()=>{}}) => {
     return (
         <div>
             <button

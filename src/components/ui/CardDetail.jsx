@@ -3,7 +3,7 @@ import Button from './Button'
 import CardBussiness from './CardBussiness'
 import CardBussinessList from './CardBussinessList'
 
-const CardDetail = ({ id = 1, showPopUpConfirm = '', setShowPopUpConfirm = '' }) => {
+const CardDetail = ({ id = 1, showPopUpConfirm, setShowPopUpConfirm = ()=>{} }) => {
     const openPopUpConfirm = (e) => {
         e.preventDefault()
         setShowPopUpConfirm(1)
