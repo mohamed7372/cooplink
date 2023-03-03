@@ -1,6 +1,14 @@
 import React from 'react'
+import Button from './Button'
+import CardBussiness from './CardBussiness'
+import CardBussinessList from './CardBussinessList'
 
-const CardDetail = ({id=0}) => {
+const CardDetail = ({ id = 1, showPopUpConfirm = '', setShowPopUpConfirm = '' }) => {
+    const openPopUpConfirm = (e) => {
+        e.preventDefault()
+        setShowPopUpConfirm(1)
+    }
+
     return (
         <div>
             {id == 0 ? 
@@ -14,7 +22,70 @@ const CardDetail = ({id=0}) => {
                 )
                     :
                 (
-                <div></div>
+                    <div>
+                        <div className='rounded-lg shadow-md border p-4'>
+                            <div className='flex items-center mb-4'>
+                                <img src="" alt="" className='w-8 h-8 rounded-full bg-primary-200' />
+                                <h4 className='text-1xl font-semibold ml-2'>KPCapital</h4>
+                            </div>
+                            <div className='flex mt-8 mb-4'>
+                                <div className='h-1 bg-primary-500 rounded-full w-16 mr-4'></div>
+                                <div className='h-1 bg-primary-500 rounded-full w-16 mr-4'></div>
+                                <div className='h-1 bg-primary-500 rounded-full w-16 mr-4'></div>
+                            </div>
+                            <h5 className='text-sm font-semibold'>This Company is compatible with the needs you want.</h5>
+                            <p className='text-secondary-400 text-sm'>In KPCapital we can collect many data, that would help your business to find the right capital providers.</p>
+                            <ul className='grid grid-cols-2 gap-y-2 mt-3 mb-4 w-1/3'>
+                                <li className='flex mr-8'>
+                                    <span className='text-xs font-semibold pr-2'>Industry:</span>
+                                    <span className='text-xs font-semibold text-primary-500'>Collect</span>
+                                </li>
+                                <li className='flex'>
+                                    <span className='text-xs font-semibold pr-2'>Collaborations:</span>
+                                    <span className='text-xs font-semibold text-primary-500'>7</span>
+                                </li>
+                                <li className='flex col-span-2'>
+                                    <span className='text-xs font-semibold pr-2'>Services:</span>
+                                    <span className='text-xs font-semibold text-primary-500'>Collect finance Aids</span>
+                                </li>
+                                <li className='flex col-span-2'>
+                                    <span className='text-xs font-semibold pr-2'>Company Size:</span>
+                                    <span className='text-xs font-semibold text-primary-500'>100-1k</span>
+                                </li>
+                                <li className='flex col-span-2'>
+                                    <span className='text-xs font-semibold pr-2'>Services in Hour:</span>
+                                    <span className='text-xs font-semibold text-primary-500'>4</span>
+                                </li>
+                            </ul>
+                            <Button title={'Connect'} color='text-white' bgcolor={'bg-primary-500'} onclick={openPopUpConfirm} />
+                        </div>
+                        <h5 className='text-1xl font-semibold mt-16'>
+                            Other <span className='text-primary-500'>Collect</span> Companies
+                        </h5>
+                        <div className='grid grid-cols-2 gap-4 mt-4'>
+                            <CardBussiness
+                                img=''
+                                title='KPCapital'
+                                desp='In KPCapital we can collect many data, that would help your business to find the right capital providers.'
+                                industry='Collect'
+                                collaborations='7'
+                                point={false}/>
+                            <CardBussiness
+                                img=''
+                                title='KPCapital'
+                                desp='In KPCapital we can collect many data, that would help your business to find the right capital providers.'
+                                industry='Collect'
+                                collaborations='7'
+                                point={false}/>
+                            <CardBussiness
+                                img=''
+                                title='KPCapital'
+                                desp='In KPCapital we can collect many data, that would help your business to find the right capital providers.'
+                                industry='Collect'
+                                collaborations='7'
+                                point={false}/>
+                        </div>
+                    </div>
                 )
             }
         </div>

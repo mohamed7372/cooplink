@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CardBussiness from '../components/ui/CardBussiness'
 import CardBussinessList from '../components/ui/CardBussinessList'
 import CardDetail from '../components/ui/CardDetail'
 import NavBar from '../layouts/NavBar'
+import PopUpConfirm from '../layouts/PopUpConfirm'
 
 const Dashboard = () => {
+    const [showPopUpConfirm, setShowPopUpConfirm] = useState(0)
     return (
-        <div className='w-full bg-white h-screen'>
+        <div className='w-full bg-white h-screen relative'>
             <NavBar />
+            {showPopUpConfirm===1 &&
+                <div className='z-50 fixed left-0 top-0 w-full h-full bg-secondary-800 bg-opacity-70 flex justify-center items-center'>
+                    <PopUpConfirm showPopUpConfirm={showPopUpConfirm} setShowPopUpConfirm={setShowPopUpConfirm} />
+                </div>
+            }
             <div className='px-8 pt-8 pb-2'>
                 <h1 className='text-3xl font-bold'>Dashboard</h1>
                 <ul className='border-b-2 flex mt-4'>
@@ -44,7 +51,7 @@ const Dashboard = () => {
                 </div>
 
                 <div className='w-2/3 pl-16 pt-4'>
-                    <CardDetail/>
+                    <CardDetail showPopUpConfirm={showPopUpConfirm} setShowPopUpConfirm={setShowPopUpConfirm}/>
                 </div>
             </div>
         </div>

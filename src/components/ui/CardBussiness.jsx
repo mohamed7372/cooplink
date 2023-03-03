@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CardBussiness = ({img, title, desp, industry, collaborations}) => {
+const CardBussiness = ({img, title, desp, industry, collaborations, point=true}) => {
     return (
-        <div className='border rounded-lg bg-white p-4 mb-4 relative shadow-sm hover:shadow-lg'>
-            <div className='w-8 h-8 bg-gray-200 rounded-full absolute -left-14 top-4'></div>
+        <div className={`border rounded-lg bg-white p-4 mb-4 relative shadow-sm hover:shadow-lg`}>
+            {point && <div className='w-8 h-8 bg-gray-200 rounded-full absolute -left-14 top-4'></div>}
             <div className='flex items-center mb-4'>
                 <img src="" alt="" className='w-8 h-8 rounded-full bg-primary-200' />
                 <h4 className='text-1xl font-semibold ml-2'>KPCapital</h4>
