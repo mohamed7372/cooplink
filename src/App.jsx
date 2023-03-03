@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Sign from "./pages/Sign";
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/create-account" element={<Sign/>} />
           <Route exact path="/create-account-bussiness" element={<SignBussiness/>} />
           <Route exact path="/home" element={<Home/>} />
+          <Route exact path="/dashboard" element={<Dashboard/>} />
           {/* <Route path="*" element={<Error/>} /> */}
         </Routes>
       </Router>

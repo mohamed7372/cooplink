@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
     return (
-        <div className='flex justify-end bg-white py-2 responsive'>
+        <div className='flex justify-end bg-white py-2 responsive shadow-md'>
             <div className='flex justify-between items-center w-28'>
                 <img src="" alt="" className='w-10 h-10 bg-red-300 rounded-full' />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
