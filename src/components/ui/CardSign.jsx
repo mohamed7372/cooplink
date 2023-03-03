@@ -13,7 +13,7 @@ const CardSign = () => {
                 
                 <div className='mt-12 flex justify-between'>
                     <Link to={'/login'}><p className='text-center hover:underline cursor-pointer text-secondary-300 text-sm'>You have an Account ?</p></Link>
-                    <p className='text-center hover:underline cursor-pointer text-secondary-300 text-sm'>I’m a business</p>
+                    <Link to={'/create-account-bussiness'}><p className='text-center hover:underline cursor-pointer text-secondary-300 text-sm'>I’m a business</p></Link>
                 </div>
             </div>
         </div>
