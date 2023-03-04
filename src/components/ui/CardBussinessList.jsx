@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CardBussiness from './CardBussiness'
+import bussiness from '../../data/businesses.json'
 
-const CardBussinessList = ({select, setSelect}) => {
+const CardBussinessList = ({ select, setSelect }) => {
+    const [dataBussiness, setDataBussiness] = useState(bussiness)
+
     return (
         <div className='mt-4 ml-14 relative'>
             <div className={`h-[calc(100%-140px)] border-l-2 bg-gray-200 absolute -left-10 top-4 z-30`}></div>

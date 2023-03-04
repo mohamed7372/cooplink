@@ -3,7 +3,7 @@ import ImgSer from '../../assets/img/ser1.jpeg'
 
 const CardBussiness = ({img, title, desp, industry, collaborations, point=true, borderColor=''}) => {
     return (
-        <div className={`${borderColor} cursor-pointer rounded-lg bg-white p-4 mb-4 relative shadow-sm hover:shadow-lg`}>
+        <div className={`${borderColor} cursor-pointer rounded-lg bg-white p-4 mb-4 relative shadow-lg hover:shadow-xl`}>
             {point && <div className='w-8 h-8 bg-gray-200 rounded-full absolute -left-14 top-4'></div>}
             <div className='flex items-center mb-4'>
                 <img src={ImgSer} alt="" className='w-8 h-8 rounded-full bg-primary-200' />
