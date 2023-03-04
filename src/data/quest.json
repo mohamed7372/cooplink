@@ -4,26 +4,26 @@
         "id": 1,
         "question": "What is the industry you what to start ",
         "options": [
-          "E-commerce",
-          "wood-working",
+          "Material premiers",
+          "Wood-working",
           "Metal working",
-          "wod working and E-commerce"
+          "Wod working and E-commerce"
         ]
         
       }
     ],
-  "E-commerce": [
+  "Material premiers": [
       {
-          "intro":"in this industry we will provide you with a company that will manage your social medias so you can be more in had with the products and let us find your marketres"
+          "intro":"In this industry we will provide you with a company that will manage your social medias so you can be more in had with the products and let us find your marketres"
       },
       {
         "id": 1,
         "question": "service",
-        "options":   ["social medial"]
+        "options":   ["Wood", "Plastic", "Iron"]
       },
     {
       "id": 2,
-      "question": "what is your budget",
+      "question": "What is your budget",
       "options": [
         "100",
         "200",

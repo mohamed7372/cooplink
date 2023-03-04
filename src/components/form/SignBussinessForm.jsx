@@ -57,9 +57,9 @@ const SignBussinessForm = ({ title, subtitle, step, onclick }) => {
                         <div className='mt-4'>
                             <Input type='text' placeholder='Name' />
                             <Input type='text' placeholder='Location' />
-                            <SelectBox type={0} title='Industry'/>
-                            <SelectBox type={0} title='Company Size'/>
-                            <SelectBox type={0} title='Company Market'/>
+                            <SelectBox type={0} title='Industry' options={['Material Premiers', 'Fabrucing', 'Marketing', '...']}/>
+                            <SelectBox type={0} title='Company Size' options={['Low (1-100)', 'Medium (100-10k)', 'High (>10k)']}/>
+                            <SelectBox type={0} title='Incomes range' options={['Low', 'Average', 'High']}/>
                             <Button title='Continue' color='text-white' bgcolor='bg-primary-500' onclick={onclick} />
                         </div>
                     </div>
@@ -76,10 +76,10 @@ const SignBussinessForm = ({ title, subtitle, step, onclick }) => {
                             )}
                         </div>
                         <hr className='my-2'/>
-                        <SelectBox type={2} title='Category Of Service'/>
-                        <SelectBox type={2} title='Service Name'/>
+                        <Input type='text' placeholder='Service Name' />
                         <Input type='number' placeholder='Price of Service' />
-                        <SelectBox type={2} title='Quality Of Service' />
+                        <SelectBox type={2} title='Quality Of Service' options={['Low', 'Medium', 'High']}/>
+                        <SelectBox type={2} title='Quantity' options={['1-100', '100-10k', '10k-100K','100K-1M','>1M']}/>
                         <div className='flex justify-end'>
                             <Button title={'Add Service'} color='text-white' bgcolor='bg-primary-700' onclick={addService} />
                         </div>

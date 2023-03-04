@@ -5,14 +5,13 @@ const SelectBox = ({type=1 , title='', options=[''], onchange=()=>{}}) => {
         <div className="relative w-full lg:max-w-sm inline">
             {type == 1 ?
                 <select
-                    className="text-center ml-4 py-1 text-xl font-semibold text-primary-500 bg-white outline-none appearance-none border-b border-b-black w-fit"
+                    className="dark:pr-8 dark:py-2 dark:text-center text-center ml-4 py-1 text-xl font-semibold text-primary-500 bg-white outline-none appearance-none border-b border-b-black w-fit"
                     onChange={onchange}>
-                    <option className='px-3 py-1'></option>
+                    <option disabled className='px-3 py-1'></option>
                     {options.map((opt, idx) => 
                         <option
                             key={idx}
-                            value={opt}>
-                            <p className=''>{opt}</p>
+                            value={opt}>{opt}
                         </option>
                     )}
                 </select>
@@ -25,11 +24,13 @@ const SelectBox = ({type=1 , title='', options=[''], onchange=()=>{}}) => {
                     </div>
 
                     <select className="px-3 py-2 text-sm rounded-lg font-semibold text-gray-500 bg-white outline-none appearance-none border w-full">
-                        <option selected>{title}</option>
-                        <option>ReactJS Dropdown</option>
-                        <option>Laravel 9 with React</option>
-                        <option>React with Tailwind CSS</option>
-                        <option>React With Headless UI</option>
+                        <option disabled>{title}</option>
+                        {options.map((opt, idx) => 
+                            <option
+                                key={idx}
+                                value={opt}>{opt}
+                            </option>
+                        )}
                     </select>
                 </div>
             }      
