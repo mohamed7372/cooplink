@@ -70,7 +70,7 @@ const CardQuestion = () => {
                                 <SelectBox options={qte['general'][0].options} onchange={changeSelectIndustry} />
                             </div>
                             <div className='flex justify-end'>
-                                <Button title={'Next'} color='text-white' bgcolor='bg-primary-500' onclick={nextPage}/>
+                                <Button title={'Next'} color='text-white' bgcolor='bg-primary-500' onclick={nextPage}  disactive={industry === ''} />
                             </div>
                         </div>
                     }
@@ -81,7 +81,7 @@ const CardQuestion = () => {
                                 <SelectBox options={qte[industry][1].options} onchange={changeSelectProd} />
                             </div>
                             <div className='flex justify-end'>
-                                <Button title={'Next'} color='text-white' bgcolor='bg-primary-500' onclick={nextPage}/>
+                                <Button title={'Next'} color='text-white' bgcolor='bg-primary-500' onclick={nextPage} disactive={prod === ''} />
                             </div>
                         </div>
                     }
@@ -92,7 +92,7 @@ const CardQuestion = () => {
                                 <SelectBox options={qte[industry][2].options} onchange={changeSelectBudget} />
                             </div>
                             <div className='flex justify-end'>
-                                <Button title={'Next'} color='text-white' bgcolor='bg-primary-500' onclick={nextPage}/>
+                                <Button title={'Next'} color='text-white' bgcolor='bg-primary-500' onclick={nextPage} disactive={budget === ''} />
                             </div>
                         </div>
                     }

@@ -7,9 +7,13 @@ const SelectBox = ({type=1 , title='', options=[''], onchange=()=>{}}) => {
                 <select
                     className="text-center ml-4 py-1 text-xl font-semibold text-primary-500 bg-white outline-none appearance-none border-b border-b-black w-fit"
                     onChange={onchange}>
-                    <option></option>
+                    <option className='px-3 py-1'></option>
                     {options.map((opt, idx) => 
-                        <option key={idx} value={opt}>{opt}</option>
+                        <option
+                            key={idx}
+                            value={opt}>
+                            <p className=''>{opt}</p>
+                        </option>
                     )}
                 </select>
                 :
