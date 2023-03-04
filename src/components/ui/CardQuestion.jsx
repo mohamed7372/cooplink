@@ -45,17 +45,18 @@ const CardQuestion = () => {
             budget: budget,
             mass: mass,
         }
+        
+        navigate('/loading');
 
-        commandeService
-            .create(commandeObject)
-            .then(resp => {
-                console.log('success');
-                navigate('/loading');
-            })
-            .catch(err => {
-                console.log('error');
-                navigate('/welcome');
-            })
+        // commandeService
+        //     .create(commandeObject)
+        //     .then(resp => {
+        //         console.log('success');
+        //     })
+        //     .catch(err => {
+        //         console.log('error');
+        //         navigate('/welcome');
+        //     })
     }
 
     return (
