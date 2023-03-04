@@ -1,12 +1,23 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import CardBussiness from '../components/ui/CardBussiness'
 import CardBussinessList from '../components/ui/CardBussinessList'
 import CardDetail from '../components/ui/CardDetail'
 import NavBar from '../layouts/NavBar'
 import PopUpConfirm from '../layouts/PopUpConfirm'
+import PopUpFilter from '../layouts/PopUpFilter'
 
 const Dashboard = () => {
+    const [select, setSelect] = useState(0)
+    const [page, setPage] = useState(1)
+
     const [showPopUpConfirm, setShowPopUpConfirm] = useState(0)
+    const [showPopUpFilter, setShowPopUpFilter] = useState(0)
+
+    const showPopUp = () => {
+        setShowPopUpFilter(1)
+    }
+
     return (
         <div className='w-full bg-white h-screen relative'>
             <NavBar />
@@ -15,22 +26,35 @@ const Dashboard = () => {
                     <PopUpConfirm showPopUpConfirm={showPopUpConfirm} setShowPopUpConfirm={setShowPopUpConfirm} />
                 </div>
             }
-            <div className='px-8 pt-8 pb-2'>
+            {showPopUpFilter===1 &&
+                <div className='z-50 fixed left-0 top-0 w-full h-full bg-secondary-800 bg-opacity-70 flex justify-center items-center'>
+                    <PopUpFilter showPopUpFilterx={showPopUpFilter} setShowPopUpFilter={setShowPopUpFilter} />
+                </div>
+            }
+            <div className='px-16 pt-8 pb-2'>
                 <h1 className='text-3xl font-bold'>Dashboard</h1>
                 <ul className='border-b-2 flex mt-4'>
-                    <li className='text-primary-600 border-b-2 border-primary-600 pb-2 text-sm mr-4 font-semibold cursor-pointer hover:text-primary-200'>Untitled</li>
-                    <li className='text-secondary-600 text-sm mr-4 border-b-2 border-white font-semibold pb-2 cursor-pointer hover:text-primary-200'>MyFirstTry</li>
+                    <li className={` ${page === 1 ? 'text-primary-600 border-primary-600': 'text-secondary-600 border-white'}  border-b-2  pb-2 text-sm mr-4 font-semibold cursor-pointer hover:text-primary-200`}
+                        onClick={()=>setPage(1)}>
+                        Untitled
+                    </li>
+                    <li className={` ${page === 2 ? 'text-primary-600 border-primary-600': 'text-secondary-600 border-white'}  border-b-2  pb-2 text-sm mr-4 font-semibold cursor-pointer hover:text-primary-200`}
+                        onClick={()=>setPage(2)}>
+                        MyFirstTry
+                    </li>
                     <li className='text-secondary-600 text-sm flex border-b-2 border-white items-center pb-2 font-semibold cursor-pointer hover:text-primary-200'>
-                        <p>Create New Schema</p>
-                        <div className='mt-1 ml-1'>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
+                        <Link to={'/home'} className='flex'>
+                            <p>Create New Schema</p>
+                            <div className='mt-1 ml-1'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </Link>
                     </li>
                 </ul>
             </div>
-            <div className='px-8 flex'>
+            <div className='px-16 flex'>
                 <div className='w-1/3'>
                     
                     <div className='mt-4 flex justify-between items-center'>
@@ -42,16 +66,18 @@ const Dashboard = () => {
                                 <path d="M4.72684 9.55971C3.68837 10.1593 3.33256 11.4872 3.93213 12.5257C4.47962 13.4739 5.64757 13.8661 6.65644 13.4405L16.7609 9.1774C18.4668 8.45769 20.4416 9.12086 21.3673 10.7243C22.3811 12.4802 21.7795 14.7255 20.0236 15.7393L17.1408 17.4037C16.782 17.6108 16.3233 17.4879 16.1162 17.1291C15.9091 16.7704 16.032 16.3117 16.3908 16.1046L19.2736 14.4402C20.312 13.8407 20.6678 12.5128 20.0683 11.4743C19.5208 10.526 18.3528 10.1338 17.344 10.5595L7.23953 14.8225C5.53366 15.5422 3.55883 14.8791 2.63309 13.2757C1.61931 11.5197 2.22093 9.27444 3.97684 8.26067L6.85966 6.59627C7.21838 6.38917 7.67707 6.51207 7.88418 6.87079C8.09129 7.22951 7.96838 7.6882 7.60966 7.89531L4.72684 9.55971Z" fill="black"/>
                             </svg>
                         </h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                        </svg>
+                        <button onClick={showPopUp}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                        </button>
                     </div>
 
-                    <CardBussinessList />
+                    <CardBussinessList select={select} setSelect={setSelect} />
                 </div>
 
                 <div className='w-2/3 pl-16 pt-4'>
-                    <CardDetail showPopUpConfirm={showPopUpConfirm} setShowPopUpConfirm={setShowPopUpConfirm}/>
+                    <CardDetail showPopUpConfirm={showPopUpConfirm} setShowPopUpConfirm={setShowPopUpConfirm} id={select===0 ? 0 : 1} />
                 </div>
             </div>
         </div>

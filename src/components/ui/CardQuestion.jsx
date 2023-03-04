@@ -4,7 +4,7 @@ import SelectBox from './SelectBox'
 import Button from './Button'
 import data from '../../data/quest.json'
 import commandeService from '../../services/commande'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const CardQuestion = () => {
     const navigate = useNavigate()
@@ -46,8 +46,6 @@ const CardQuestion = () => {
             mass: mass,
         }
 
-        navigate('/loading')
-        return;
         commandeService
             .create(commandeObject)
             .then(resp => {
@@ -110,7 +108,9 @@ const CardQuestion = () => {
                         </div>
                     }
                 </form>
-                <p className='text-primary-700 font-semibold text-sm hover:underline cursor-pointer'>Skip To The Empty Dashboard</p>
+                <Link to={'/dashboard'}>
+                    <p className='text-primary-700 font-semibold text-sm hover:underline cursor-pointer'>Skip To The Empty Dashboard</p>
+                </Link>
             </div>
         </div>
     )
